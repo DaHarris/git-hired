@@ -1,10 +1,8 @@
 # git-hired
 
-''''
 bundle
 rake db:create
 rake db:migrate
-''''
 
 gitHired is a website that combines linkedin and github profiles
 into a single resume page. Employers can visit your page and connect
@@ -20,11 +18,11 @@ linkedin on next logins. Github information WILL be pulled on EVERY login.
 UI is done in foundation with custom css.
 
 Contributors to the project:
-  Daniel Harris
-  Caleb Atwood
-  Jessica Koch
-  Alexandra Hanley
-  Hayley Blackstock
+Daniel Harris
+Caleb Atwood
+Jessica Koch
+Alexandra Hanley
+Hayley Blackstock
 
 Database:
 
@@ -38,7 +36,7 @@ Database:
     phone: int
     bio: string
 
-    Should be other tables?
+Other tables?
 
     experience:
     skills:
