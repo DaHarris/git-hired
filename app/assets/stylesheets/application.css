@@ -13,5 +13,14 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
+ *= require jquery.fullPage
 
  */
+
+.navbar {
+ margin-bottom: 50px;
+}
+
+.panel.expgit {
+  height: 645px;
+}

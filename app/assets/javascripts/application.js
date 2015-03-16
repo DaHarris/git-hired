@@ -13,6 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require jquery.slimscroll
+//= require jquery.easings.min
+//= require jquery.fullPage
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){
+
+  $(document).foundation();
+  $('#fullpage').fullpage();
+
+});
