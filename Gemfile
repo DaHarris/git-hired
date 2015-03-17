@@ -4,7 +4,7 @@ gem 'faraday', '~> 0.9.1'
 #omniauth for linkedin
 gem 'omniauth'
 gem 'omniauth-linkedin-oauth2'
-gem "octokit"
+gem 'octokit'
 #foundation zurb
 gem 'foundation-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

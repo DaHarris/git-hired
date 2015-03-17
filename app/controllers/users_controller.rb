@@ -5,12 +5,13 @@ class UsersController < ApplicationController
 
   def show
     @gitfetcher = GitFetcher.new
-    @name = @gitfetcher.name(params[:username])
-    @email = @gitfetcher.email(params[:username])
-    @repos = @gitfetcher.get_repos(params[:username])
+    @name = @gitfetcher.name(params[:uid])
+    @email = @gitfetcher.email(params[:uid])
+    @get_repos = @gitfetcher.repositories(params[:uid])
+
   end
 
   def create
   end
-  
+
 end

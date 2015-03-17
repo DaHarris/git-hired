@@ -2,6 +2,6 @@
   <h1>Github Projects</h1>
 </div>
 
-<% @repos.each do |repo| %>
-<%= repo.username %>
+<% @get_repos.each do |repo| %>
+  <li><%= link_to repo.name, "https://github.com/#{repo.full_name}" %></li>
 <% end %>
