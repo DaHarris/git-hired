@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
- *= require jquery.fullPage
 
  */
 
@@ -22,7 +21,19 @@
 }
 
 .panel.expgit {
-  height: 645px;
+
+}
+
+.arrowleft {
+  position: absolute;
+  left: 10px;
+  top: 500px;
+}
+
+.arrowright {
+  position: absolute;
+  right: 10px;
+  top: 500px;
 }
 
 h1,h2,h3,h4,h5,h6,a,p {

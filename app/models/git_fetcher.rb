@@ -7,16 +7,16 @@ class GitFetcher
     @user.login
   end
 
-  def name(uid)
-    @client.user(uid).name
+  def name(github_id)
+    @client.user(github_id).name
   end
 
-  def email(uid)
-    @client.user(uid).email
+  def email(github_id)
+    @client.user(github_id).email
   end
 
-  def repositories(uid)
-    @client.repositories(uid)
+  def repositories(github_id)
+    @client.repositories(github_id)
   end
 
 end

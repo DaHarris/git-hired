@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
   resources :users
+
+  get 'users/:id/git' => 'users#git', as: 'git'
+
+  match 'first/:id' => 'users#first_splash', as: 'first_splash', via: [:get]
+  match 'role/:id' => 'users#role_set', as: 'role_set', via: [:patch]
+  match 'second/:id' => 'users#second_splash', as: 'second_splash', via: [:get]
+  match 'gitid/:id' => 'users#git_set', as: 'git_set', via: [:patch]
+
+
   # You can have the root of your site routed with "root"
   root 'users#welcome'
   match "/auth/linkedin/callback" => "sessions#create", via: [:get, :post]

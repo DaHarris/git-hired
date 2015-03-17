@@ -2,7 +2,7 @@
   <div class="row">
     <div class="medium-4 columns">
       <div class="profilepic">
-        <%= image_tag(@user.picture_url, width: "200") %>
+        <%= image_tag(@user.picture_url) %>
       </div>
       <div class="text-center">
         <h3><%= @user.name %></h3>
@@ -10,18 +10,18 @@
       </div>
       <p><%= @user.description %></p>
 
-      <%= render 'looking_for_form' %>
+      <%= render 'project_form' %>
 
     </div>
 
     <div class="medium-8 columns">
       <div class="panel expgit">
-        <%= render 'experience_form' %>
+        <%= render 'github_form' %>
       </div>
     </div>
   </div>
 </div>
 
-<div class="arrowright">
-  Github<%= link_to image_tag("arrow_right.png"), git_path %>
+<div class="arrowleft">
+  <%= link_to image_tag("arrow_left.png"), user_path(@user) %>Experience
 </div>
