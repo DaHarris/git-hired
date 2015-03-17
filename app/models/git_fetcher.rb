@@ -7,17 +7,16 @@ class GitFetcher
     @user.login
   end
 
-  def name(username)
-    @client.user(username).name
+  def name(uid)
+    @client.user(uid).name
   end
 
-  def email(username)
-    @client.user(username).email
+  def email(uid)
+    @client.user(uid).email
   end
 
-  def get_repos(username)
-    @client.user.repos(username)
-    @repos = GitFetcher.new.get_repos(username)
+  def repositories(uid)
+    @client.repositories(uid)
   end
 
 end
