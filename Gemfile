@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 #omniauth for linkedin
 gem 'omniauth'
-gem 'omniauth-linkedin'
+gem 'omniauth-linkedin-oauth2'
 gem "octokit"
 #foundation zurb
 gem 'foundation-rails'
