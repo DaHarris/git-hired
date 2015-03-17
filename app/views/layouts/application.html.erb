@@ -27,8 +27,14 @@
       <section class="top-bar-section">
          <!-- Right Nav Section -->
          <ul class="right">
-           <li class="active"><%= link_to 'Login', root_path %></li>
-         </ul>
+           <% if current_user %>
+             <li>Welcome <%= current_user.name %>!</li>
+             <li><%= link_to "Sign Out", signout_path %></li>
+           <% else %>
+             <li><%= link_to "Sign In", "/auth/linkedin" %></li>
+           <% end %>
+
+        </ul>
        </section>
      </nav>
   </div>
