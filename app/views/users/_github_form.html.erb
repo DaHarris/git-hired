@@ -1,3 +1,7 @@
 <div class="text-center">
   <h1>Github Projects</h1>
 </div>
+
+<% @repos.each do |repo| %>
+<%= repo.username %>
+<% end %>

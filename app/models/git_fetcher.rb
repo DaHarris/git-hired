@@ -16,7 +16,8 @@ class GitFetcher
   end
 
   def get_repos(username)
-    @client.user(username).get_repos
+    @client.user.repos(username)
+    @repos = GitFetcher.new.get_repos(username)
   end
 
 end
