@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+#faraday
+gem 'faraday', '~> 0.9.1'
 #omniauth for linkedin
 gem 'omniauth'
 gem 'omniauth-linkedin-oauth2'
