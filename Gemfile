@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 #omniauth for linkedin
 gem 'omniauth'
 gem 'omniauth-linkedin'
+gem "octokit"
 #foundation zurb
 gem 'foundation-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
