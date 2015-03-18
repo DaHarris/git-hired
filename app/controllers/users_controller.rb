@@ -12,7 +12,9 @@ class UsersController < ApplicationController
   def show
 
     @user = User.find_by_id(params[:id])
-
+    if @user.role == "employer" && @user.id = params[:id]
+      redirect_to users_path
+    end
     @employment = Employment.where(user_id: @user.id)
     @education = Education.where(user_id: @user.id)
     @skills = Skill.where(user_id: @user.id)
@@ -67,6 +69,7 @@ class UsersController < ApplicationController
     @name = @gitfetcher.name(@user.github_id)
     @email = @gitfetcher.email(@user.github_id)
     @get_repos = @gitfetcher.repositories(@user.github_id)
+    @avatar = @gitfetcher.avatar(@user.github_id)
 
     @get_repos.each do |repo|
       Repo.create(user_id: @user.id, name: repo.name,
