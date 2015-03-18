@@ -1,6 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<div class="body">
-  <div class="welcome">
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-  </div>
-</div>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+
+    <div class="welcome">
+      <div class="panel">
+
+      
+
+    </div>
+  </body>
+</html>

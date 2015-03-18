@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
-  layout 'application', except: [:welcome]
 
   def welcome
+    render :layout => false
   end
 
   def index
+    @users = Users.all
   end
 
   def show
