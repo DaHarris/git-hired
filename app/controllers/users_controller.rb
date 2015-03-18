@@ -48,12 +48,15 @@ class UsersController < ApplicationController
 
   def role_set
     @user = User.find_by_id(params[:id])
-    @user.update(role: params[:role])
+    @user.update(role: params[:user][:role])
     redirect_to second_splash_path
   end
 
   def second_splash
     @user = User.find_by_id(params[:id])
+    if @user.role == "employer"
+      redirect_to users_path
+    end
   end
 
   def git_set

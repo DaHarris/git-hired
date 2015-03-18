@@ -1,2 +1,20 @@
-<h1>WHATS UP <%= @user.name %></h1>
-<%= link_to 'second', second_splash_path(@user) %>
+<div class="container">
+  <div class="row">
+    <br>
+    <div class="text-right">
+      Step 1 of 4
+    </div>
+    <h1>Welcome, <%= @user.name %>!</h1>
+    <hr>
+
+    <h5>To get started, we are just going to ask a couple questions so we can setup your profile for you!</h5>
+    <br>
+    <p> Are you here in the role of employer or employee? </p>
+    <%= form_for @user, :url => role_set_path do |f| %>
+
+      <%= f.select(:role, [['Employee', 'employee'], ['Employer', 'employer']]) %>
+
+      <%= f.submit class: "button" %>
+    <% end %>
+  </div>
+</div>

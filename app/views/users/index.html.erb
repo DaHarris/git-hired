@@ -1,0 +1,40 @@
+<div class= "index_image"
+  <div class="container">
+    <div class="row">
+      <div class="index">
+        <table>
+          <thead>
+            <tr>
+              <th width="100"></th>
+              <th width="150">Current Employer</th>
+              <th width="300">Skills</th>
+              <th width="150">Contact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user| %>
+              <tr>
+                <td><%= link_to image_tag(user.picture_url, width: "100"), user_path(user) %><div class="text-center"><%= user.name %></div></td>
+                  <% if user.employments == [] %>
+                <td>Fun-Employeed</td>
+                  <% end %>
+                  <% user.employments.each do |emp| %>
+                  <% if emp.current == true %>
+                <td><%= emp.company %></td>
+                  <% break %>
+                  <% else %>
+                <td>Fun-employeed</td>
+                  <% break %>
+                  <% end %>
+                  <% end %>
+                <td><% user.skills.each_with_index do |skill,i|%><% if i < 10 %><%= skill.name %>, <% end %><% end %></td>
+
+                <td><%= mail_to user.email %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
