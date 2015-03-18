@@ -1,29 +1,31 @@
-<div class="container">
-  <div class="row">
-    <div class="medium-4 columns">
-      <div class="profilepic">
-        <%= image_tag(@user.picture_url, width: "300") %>
-      </div>
-      <div class="text-center">
-        <h3><%= @user.name %></h3>
-        <hr>
-      </div>
-      <div class="text-center">
-        <p><%= @user.description %></p>
+<div class="user_git_image">
+  <div class="container">
+    <div class="row git">
+      <div class="medium-4 columns">
+        <div class="profilepic">
+          <%= image_tag(@user.picture_url, width: "300") %>
+        </div>
+        <div class="text-center">
+          <h3><%= @user.name %></h3>
+          <hr>
+        </div>
+        <div class="text-center">
+          <p><%= @user.description %></p>
+        </div>
+
+        <%= render 'project_form' %>
+
       </div>
 
-      <%= render 'project_form' %>
-
-    </div>
-
-    <div class="medium-8 columns">
-      <div class="panel expgit">
-        <%= render 'github_form' %>
+      <div class="medium-8 columns">
+        <div class="panel expgit">
+          <%= render 'github_form' %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="arrowleft">
-  <%= link_to image_tag("/resume-and-arrow.png"), user_path(@user) %>
+  <div class="arrowleft">
+    <%= link_to image_tag("/resume-and-arrow.png"), user_path(@user) %>
+  </div>
 </div>
