@@ -21,7 +21,22 @@
 }
 
 .panel.expgit {
+  margin-top: 20px;
+}
 
+.button a {
+  font-family: 'Raleway', sans-serif;
+  color: #F6EFEE;
+}
+
+.button.expand {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+}
+
+.profilepic {
+  margin-top: 20px;
 }
 
 .arrowleft {

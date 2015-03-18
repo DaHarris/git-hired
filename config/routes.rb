@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   match 'role/:id' => 'users#role_set', as: 'role_set', via: [:patch]
   match 'second/:id' => 'users#second_splash', as: 'second_splash', via: [:get]
   match 'gitid/:id' => 'users#git_set', as: 'git_set', via: [:patch]
+  match 'third/:id' => 'users#third_splash', as: 'third_splash', via: [:get]
+  match 'projects/:id' => 'users#project_set', as: 'project_set', via: [:post]
 
 
   # You can have the root of your site routed with "root"

@@ -2,13 +2,15 @@
   <div class="row">
     <div class="medium-4 columns">
       <div class="profilepic">
-        <%= image_tag(@user.picture_url, width: "200") %>
+        <%= image_tag(@user.picture_url, width: "300") %>
       </div>
       <div class="text-center">
         <h3><%= @user.name %></h3>
         <hr>
       </div>
-      <p><%= @user.description %></p>
+      <div class="text-center">
+        <p><%= @user.description %></p>
+      </div>
 
       <%= render 'looking_for_form' %>
 
@@ -16,7 +18,13 @@
 
     <div class="medium-8 columns">
       <div class="panel expgit">
-        <%= render 'experience_form' %>
+        <%= render 'employment_form' %>
+      </div>
+      <div class="panel">
+        <%= render 'education_form' %>
+      </div>
+      <div class="panel">
+        <%= render 'skills_form' %>
       </div>
     </div>
   </div>

@@ -1,7 +1,10 @@
 <div class="text-center">
-  <h1>Github Projects</h1>
+  <h1>Github Repos:</h1>
+  <hr>
 </div>
 
 <% @get_repos.each do |repo| %>
-  <li><%= link_to repo.name, "https://github.com/#{repo.full_name}" %></li>
+  <div class="button expand">
+    <%= link_to repo.name, "https://github.com/#{repo.full_name}"  %>
+  </div>
 <% end %>

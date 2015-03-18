@@ -1,0 +1,10 @@
+<div class="text-center">
+  <h3>Education</h3>
+  <hr>
+  <% @education.each do |edu| %>
+    <ul><strong><%= edu.school %></strong>
+      <p><%= edu.field_of_study %></strong></p>
+      <p><%= edu.degree_date %></p>
+    </ul>
+  <% end %>
+</div>

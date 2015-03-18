@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :projects
 
   def self.create_with_omniauth(auth, code)
     @current = create! do |user|

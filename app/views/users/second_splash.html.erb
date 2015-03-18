@@ -1,10 +1,18 @@
-<h1>OH SHIT ITS <%= @user.name %></h1>
-<%= link_to 'GO TO USER PAGE!', user_path(@user) %>
+<div class="container">
+  <div class="row">
+    <br>
+    <div class="text-right">
+      Step 1 of 3
+    </div>
+    <h1>Welcome, <%= @user.name %>!</h1>
+    <hr>
 
-<%= form_for @user, :url => { :action => :git_set } do |f| %>
+    <%= form_for @user, :url => { :action => :git_set } do |f| %>
 
-  <%= f.label :github_id %>
-  <%= f.text_area :github_id %>
+      <%= f.label 'Please enter your github username:' %>
+      <%= f.text_area :github_id %>
 
-  <%= f.submit %>
-<% end %>
+      <%= f.submit 'Find Github Profile', class: "button" %>
+    <% end %>
+  </div>
+</div>
