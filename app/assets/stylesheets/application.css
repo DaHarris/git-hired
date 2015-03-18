@@ -80,7 +80,7 @@
 .arrowleft {
   position: absolute;
   left: 10px;
-  top: 500px;
+  top: 50%;
 }
 
 .arrowleft:hover {
@@ -90,7 +90,7 @@
 .arrowright {
   position: absolute;
   right: 10px;
-  top: 500px;
+  top: 50%;
 }
 
 .arrowright:hover {
