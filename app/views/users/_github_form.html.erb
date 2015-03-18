@@ -5,6 +5,6 @@
 
 <% @get_repos.each do |repo| %>
   <div class="button expand">
-    <%= link_to repo.name, "https://github.com/#{repo.full_name}"  %>
+    <%= link_to repo.name, repo.url  %>
   </div>
 <% end %>

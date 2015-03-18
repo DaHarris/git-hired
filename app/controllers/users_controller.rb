@@ -13,24 +13,15 @@ class UsersController < ApplicationController
 
     @user = User.find_by_id(params[:id])
 
-    @gitfetcher = GitFetcher.new
-    @name = @gitfetcher.name(params[:uid])
-    @email = @gitfetcher.email(params[:uid])
-    @get_repos = @gitfetcher.repositories(params[:uid])
-
     @employment = Employment.where(user_id: @user.id)
     @education = Education.where(user_id: @user.id)
     @skills = Skill.where(user_id: @user.id)
   end
 
   def git
-
     @user = User.find_by_id(params[:id])
 
-    @gitfetcher = GitFetcher.new
-    @name = @gitfetcher.name(@user.github_id)
-    @email = @gitfetcher.email(@user.github_id)
-    @get_repos = @gitfetcher.repositories(@user.github_id)
+    @get_repos = Repo.where(user_id: @user.id)
 
     @projects = Project.where(user_id: @user.id)
   end
@@ -68,6 +59,17 @@ class UsersController < ApplicationController
   def git_set
     @user = User.find_by_id(params[:id])
     @user.update(github_id: params[:user][:github_id])
+
+    @gitfetcher = GitFetcher.new
+    @name = @gitfetcher.name(@user.github_id)
+    @email = @gitfetcher.email(@user.github_id)
+    @get_repos = @gitfetcher.repositories(@user.github_id)
+
+    @get_repos.each do |repo|
+      Repo.create(user_id: @user.id, name: repo.name,
+                  url: "https://github.com/#{repo.full_name}")
+    end
+
     redirect_to third_splash_path(@user)
   end
 
