@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.purr
+//= require best_in_place
 //= require foundation
 //= require jquery.slimscroll
 //= require jquery.easings.min

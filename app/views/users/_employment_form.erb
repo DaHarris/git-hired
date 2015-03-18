@@ -3,7 +3,7 @@
   <hr>
   <% @employment.each do |emp| %>
   <% if emp.current == true %>
-    Currently employed @  
+    Currently employed @
   <% end %>
     <ul><strong><%= emp.company %></strong>
       <p><%= emp.title %></p>
