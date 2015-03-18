@@ -16,6 +16,17 @@
 
  */
 
+.row.show {
+  background-color: #FFFFFF;
+  opacity: 0.93;
+}
+
+.row.git {
+  background-color: #FFFFFF;
+  opacity: 0.93;
+}
+
+
 .welcome {
  height: 100%;
  width: 100%;
@@ -110,5 +121,9 @@ h1,h2,h3,h4,h5,h6,a,p,div {
 }
 
 .user_show_image {
-  background-image: url("/aluminum.jpg")
+  background-image: url("/galvanize_1.jpg")
+}
+
+.user_git_image {
+  background-image: url("/galvanize_1.jpg")
 }
