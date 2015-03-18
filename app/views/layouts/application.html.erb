@@ -28,7 +28,7 @@
          <!-- Right Nav Section -->
          <ul class="right">
            <% if current_user %>
-              <% if current_user.role = "employer" %>
+              <% if current_user.role == "employer" %>
                 <li><%= link_to(current_user.name, users_path) %></li>
               <% else %>
                 <li><%= link_to(current_user.name, user_path(current_user)) %></li>

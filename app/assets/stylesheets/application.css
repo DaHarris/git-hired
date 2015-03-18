@@ -117,7 +117,8 @@ h1,h2,h3,h4,h5,h6,a,p,div {
 }
 
 .index_image {
-  background-image: url("/galvanize_1.jpg")
+  background-image: url("/galvanize_1.jpg");
+  min-height: 1200px;
 }
 
 .user_show_image {
