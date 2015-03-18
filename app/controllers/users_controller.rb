@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
+  respond_to :html, :json
 
   def welcome
     render :layout => false
   end
 
-  respond_to :html, :json
   def index
     @users = User.all
   end
@@ -42,9 +42,18 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update_attributes(params[:user])
-    respond_with @user
+
+    respond_to do |format|
+      if @user.update_attributes(params[:user])
+        format.html { redirect_to(@user, :notice => 'User was successfully updated') }
+        format.json { respond_with_bip(@user) }
+      else
+        format.html { render :action => 'edit' }
+        format.json { respond_with_bip(@user)}
+      end
+    end
   end
+
 
   def first_splash
     @user = User.find_by_id(params[:id])
