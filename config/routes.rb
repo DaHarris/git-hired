@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :users
 
   get 'users/:id/git' => 'users#git', as: 'git'
+  post 'users/:id/git' => 'users#destroy_repo', as: 'git_delete'
+
 
   match 'first/:id' => 'users#first_splash', as: 'first_splash', via: [:get]
   match 'role/:id' => 'users#role_set', as: 'role_set', via: [:patch]

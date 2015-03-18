@@ -3,8 +3,12 @@
   <hr>
 </div>
 
-<% @get_repos.each do |repo| %>
+<% @user.repos.each do |repo| %>
   <div class="button expand">
     <%= link_to repo.name, repo.url  %>
   </div>
+  <% if %>
+  <% @user = current_user %>
+  <%= link_to 'Delete Repo', git_delete_path(repo_id: repo.id), method: :post %>
+  <% end %>
 <% end %>

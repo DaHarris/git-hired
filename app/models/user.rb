@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :projects
+  has_many :repos
 
   enum role: [:employee, :employer, :admin]
   has_many :skills
