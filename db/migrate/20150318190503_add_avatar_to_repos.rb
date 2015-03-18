@@ -1,5 +1,5 @@
 class AddAvatarToRepos < ActiveRecord::Migration
   def change
-    add_column :repos, :avatar, :string
+    add_column :users, :avatar, :string
   end
 end

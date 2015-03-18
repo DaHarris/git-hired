@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 20150318190503) do
     t.string  "name"
     t.string  "url"
     t.boolean "show",    default: true
-    t.string  "avatar"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -64,6 +63,7 @@ ActiveRecord::Schema.define(version: 20150318190503) do
     t.string   "description"
     t.string   "github_id"
     t.integer  "role"
+    t.string   "avatar"
   end
 
 end
