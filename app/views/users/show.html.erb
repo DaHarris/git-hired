@@ -13,9 +13,10 @@
         </div>
         <div class="text-center">
           <%= link_to image_tag("/linked.png", width: "50"), @user.linkedin_url, target: "_blank" %>
-          <%= link_to image_tag("/octocat.png", width: "50"), "#" %>
-          <%= link_to image_tag("/twitter.png", width: "50"), "#" %>
-          <%= link_to image_tag("/facebook500.png", width: "50"), "#" %>
+          <%= link_to image_tag("/octocat.png", width: "50"), "http://www.github.com/#{@user.github_id}" %>
+            <% if @user.twitter_username != nil %>
+          <%= link_to image_tag("/twitter.png", width: "50"), "http://www.twitter.com/#{@user.twitter_username}" %>
+            <% end %>
             <%= mail_to @user.email do %>
           <%= image_tag("/email.png", width: "50") %>
             <% end %>
