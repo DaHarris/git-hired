@@ -21,7 +21,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 #allow users to edit stuff with no need for forms
-gem 'best_in_place', '~> 3.0.1'
+gem 'best_in_place', github: 'bernat/best_in_place'
 #needed to use respond_to feature in best_in_place
 gem 'responders', '~> 2.0'
 # Use jquery as the JavaScript library
