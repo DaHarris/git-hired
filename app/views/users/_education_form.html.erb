@@ -2,9 +2,8 @@
   <h3>Education</h3>
   <hr>
   <% @education.each do |edu| %>
-    <ul><strong><%= edu.school %></strong>
-      <p><%= edu.field_of_study %></strong></p>
-      <p><%= edu.degree_date %></p>
+      <ul><strong><%= best_in_place edu, :school, :type => :input, :url => user_path(@user) %></strong>
+      <p><%= best_in_place edu, :field_of_study, :type => :input, :url => user_path(@user) %></p>
     </ul>
   <% end %>
 </div>
