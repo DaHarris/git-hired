@@ -3,7 +3,8 @@
     <h5>Looking for:</h5>
     <hr>
   </div>
-  <p>Pair programming</p>
-  <p>Test driven development</p>
-  <p>Ruby on Rails</p>
+
+  <%= form_for @user do |f| %>
+    <%= f.text_area :looking_for, :placeholder => 'What are you looking for in a company?' %>
+  <% end %>
 </div>
