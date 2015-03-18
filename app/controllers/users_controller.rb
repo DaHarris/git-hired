@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     render :layout => false
   end
 
+  respond_to :html, :json
   def index
     @users = User.all
   end
@@ -34,7 +35,20 @@ class UsersController < ApplicationController
     @projects = Project.where(user_id: @user.id)
   end
 
+  def new
+  end
+
   def create
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update_attributes(params[:user])
+    respond_with @user
   end
 
   def first_splash
