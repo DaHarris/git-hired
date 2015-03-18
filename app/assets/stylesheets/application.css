@@ -22,6 +22,38 @@
  background-image: url("/galvanize_1.jpg")
 }
 
+.panel.callout {
+  position: absolute;
+  margin-top: 300px;
+  margin-left: 25%;
+  height: 40%;
+  width: 50%;
+  border-color: #b6edff;
+}
+
+.linkedin {
+  position: absolute;
+  margin-top: 11%;
+  margin-left: 37%;
+  height: 100px;
+  width: 100px;
+}
+
+.plus {
+  position: absolute;
+  height: 64px;
+  width: 64px;
+  margin-top: 12%;
+  margin-left: 48%;
+}
+
+.github {
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 55%;
+  border-color: #000000;
+}
+
 .navbar {
  margin-bottom: 50px;
 }
@@ -51,10 +83,18 @@
   top: 500px;
 }
 
+.arrowleft:hover {
+  opacity: 0.7;
+}
+
 .arrowright {
   position: absolute;
   right: 10px;
   top: 500px;
+}
+
+.arrowright:hover {
+  opacity: 0.7;
 }
 
 h1,h2,h3,h4,h5,h6,a,p {

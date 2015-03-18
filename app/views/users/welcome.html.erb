@@ -15,11 +15,34 @@
 
   <body>
 
+    <div class="linkedin">
+      <%= image_tag("/linkedin.png") %>
+    </div>
+
+    <div class="plus">
+      <%= image_tag("/plus.png") %>
+    </div>
+
+    <div class="github">
+      <%= image_tag("/Github.png") %>
+    </div>
+
     <div class="welcome">
-      <div class="panel">
+      <div class="panel callout">
+        <div class="text-center">
+          <h1>Welcome to gitHired!</h1>
+          <h4>gitHired is a personalized resume designed for developers and coders!</h4>
+          <hr>
+          <h6>We pull your education, skills, and employment history from LinkedIn and
+            combine it (in one place) with your Github repositories for a resume that is
+            more in line with your talents.</h6>
+          <br>
 
-      
+            <h4><%= link_to 'Sign in with LinkedIn to get started!', "/auth/linkedin" %></h4>
+        </div>
 
+
+      </div>
     </div>
   </body>
 </html>
