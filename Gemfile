@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+#foundation icons
+gem 'foundation-icons-sass-rails'
 #faraday
 gem 'faraday', '~> 0.9.1'
 #omniauth for linkedin
