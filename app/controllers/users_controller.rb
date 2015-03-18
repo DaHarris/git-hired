@@ -73,7 +73,8 @@ class UsersController < ApplicationController
 
     @get_repos.each do |repo|
       Repo.create(user_id: @user.id, name: repo.name,
-                  url: "https://github.com/#{repo.full_name}")
+                  url: "https://github.com/#{repo.full_name}",
+                  avatar: @avatar)
     end
 
     redirect_to third_splash_path(@user)
