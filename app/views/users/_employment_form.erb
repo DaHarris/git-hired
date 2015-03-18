@@ -1,12 +1,16 @@
 <div class="text-center">
   <h3>Employment</h3>
   <hr>
-  <% @employment.each do |emp| %>
-  <% if emp.current == true %>
-    Currently employed @
-  <% end %>
-    <ul><strong><%= best_in_place emp, :company, :type => :input, :url => user_path(@user)%></strong>
-      <p><%= best_in_place emp, :title, :type => :input, :url => user_path(@user) %></p>
+
+  <% @user.employments.where(current: true).each do |emp| %>
+<h4> <%= best_in_place @user.current_employer, :company, :as => :input, :url => user_path(@user, emp_id: emp.id), data: {emp: emp.id}%></h4>
+      <%= @user.current_employer.title %>
+<% end %>
+<hr>
+  <% @user.employments.where(current: false).each do |emp| %>
+  <ul>
+      <h4><%= best_in_place emp, :company, :as => :input, :url => user_path(@user, emp_id: emp.id), data: {emp: emp.id}%></h4>
+           <p><em><%= best_in_place emp, :title, :as => :input, :url => user_path(@user, emp_id: emp.id) %></em></p>
     </ul>
   <% end %>
 </div>

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'users/:id/git' => 'users#git', as: 'git'
   post 'users/:id/git' => 'users#destroy_repo', as: 'git_delete'
+  post 'users/:id/edu' => 'users#update_edu', as: 'update_edu'
 
 
   match 'first/:id' => 'users#first_splash', as: 'first_splash', via: [:get]

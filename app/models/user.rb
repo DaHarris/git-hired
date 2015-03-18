@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :projects
   has_many :repos
+  has_many :employments
+  has_many :looking_fors
 
   enum role: [:employee, :employer, :admin]
   has_many :skills
@@ -25,5 +27,9 @@ class User < ActiveRecord::Base
     get_info.get_positions
     get_info.get_past_positions
     return @current
+  end
+
+  def current_employer
+    employments.where(current: true).first
   end
 end

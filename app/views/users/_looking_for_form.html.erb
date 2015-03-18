@@ -1,10 +1,14 @@
 <div class="panel">
   <div class="text-center">
-    <h5>Looking for:</h5>
+    <h5>Company Wish List</h5>
     <hr>
   </div>
 
   <%= form_for @user do |f| %>
     <%= f.text_area :looking_for, :placeholder => 'What are you looking for in a company?' %>
+    <%= f.text_area :looking_for, :placeholder => 'Preferred languages...' %>
+    <%= f.text_area :looking_for, :placeholder => 'Preferred locations...' %>
+
+    <%= f.submit "hello" %>
   <% end %>
 </div>
