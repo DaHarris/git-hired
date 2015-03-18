@@ -128,3 +128,22 @@ h1,h2,h3,h4,h5,h6,a,p,div {
 .user_git_image {
   background-image: url("/galvanize_1.jpg")
 }
+
+.panel.purple {
+  border-style: solid;
+  border-width: 3px;
+  border-color: #5d5fad;
+
+}
+
+.panel.purple h3 {
+  color: #5d5fad;
+}
+
+.panel.purple ul {
+  list-style: none;
+}
+
+.panel.purple ul li {
+  color: #5d5fad;
+}
