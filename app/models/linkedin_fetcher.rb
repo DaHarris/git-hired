@@ -23,7 +23,6 @@ class LinkedinFetcher
       ed.user_id = @current_user.id
       ed.field_of_study = x["fieldOfStudy"]
       ed.degree = x["degree"]
-      ed.degree_date = x["endDate"]["year"]
       ed.school = x["schoolName"]
       ed.save
     end

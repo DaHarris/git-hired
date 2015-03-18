@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  layout 'application', except: [:welcome]
+
+  def welcome
+  end
 
   def index
   end
