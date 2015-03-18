@@ -5,11 +5,11 @@
         <%= image_tag(@user.picture_url, width: "300") %>
       </div>
       <div class="text-center">
-        <h3><%= @user.name %></h3>
+        <h3><%= best_in_place @user, :name %></h3>
         <hr>
       </div>
       <div class="text-center">
-        <p><%= @user.description %></p>
+        <p><%= best_in_place @user, :description, :as => :textarea %></p>
       </div>
 
       <%= render 'project_form' %>

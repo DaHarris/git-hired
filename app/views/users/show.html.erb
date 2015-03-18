@@ -12,7 +12,7 @@
         <p><%= best_in_place @user, :description, :as => :textarea %></p>
       </div>
 
-      <%= render 'looking_for_form' %>
+      <%= render partial: 'looking_for_form', locals: { user: @user} %>
 
     </div>
 
@@ -24,7 +24,7 @@
         <%= render 'education_form' %>
       </div>
       <div class="panel">
-        <%= render 'skills_form' %>
+        <%= render 'skills_form', locals: {user: @user} %>
       </div>
     </div>
   </div>

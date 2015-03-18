@@ -5,8 +5,8 @@
   <% if emp.current == true %>
     Currently employed @
   <% end %>
-    <ul><strong><%= emp.company %></strong>
-      <p><%= emp.title %></p>
+    <ul><strong><%= best_in_place emp, :company, :type => :input, :url => user_path(@user)%></strong>
+      <p><%= best_in_place emp, :title, :type => :input, :url => user_path(@user) %></p>
     </ul>
   <% end %>
 </div>
