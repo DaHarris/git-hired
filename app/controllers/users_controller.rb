@@ -20,7 +20,6 @@ class UsersController < ApplicationController
     @employment = Employment.where(user_id: @user.id)
     @education = Education.where(user_id: @user.id)
     @skills = Skill.where(user_id: @user.id)
-    @get_repos =
   end
 
   def git

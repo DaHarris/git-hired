@@ -28,8 +28,12 @@
          <!-- Right Nav Section -->
          <ul class="right">
            <% if current_user %>
-             <li><%= link_to(current_user.name, user_path(current_user)) %></li>
-             <li><%= link_to "Sign Out", signout_path %></li>
+              <% if current_user.role = "employer" %>
+                <li><%= link_to(current_user.name, users_path) %></li>
+              <% else %>
+                <li><%= link_to(current_user.name, user_path(current_user)) %></li>
+              <% end %>
+              <li><%= link_to "Sign Out", signout_path %></li>
            <% else %>
              <li><%= link_to "Sign In", "/auth/linkedin" %></li>
            <% end %>
