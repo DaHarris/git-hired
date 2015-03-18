@@ -62,9 +62,9 @@ ActiveRecord::Schema.define(version: 20150318215650) do
     t.string   "email"
     t.string   "description"
     t.string   "github_id"
+    t.string   "looking_for"
     t.integer  "role"
     t.string   "avatar"
-    t.string   "looking_for"
     t.string   "twitter_username"
   end
 
