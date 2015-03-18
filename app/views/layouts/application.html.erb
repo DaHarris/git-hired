@@ -25,6 +25,7 @@
 
 
       <section class="top-bar-section">
+
          <!-- Right Nav Section -->
          <ul class="right">
            <% if current_user %>
@@ -37,8 +38,17 @@
            <% else %>
              <li><%= link_to "Sign In", "/auth/linkedin" %></li>
            <% end %>
-
-        </ul>
+         </ul>
+         <ul class="right">
+         <%= form_tag search_path do %>
+            <div class="searchtag">
+              <%= text_field_tag :username %>
+            </div>
+            <div class="searchbox">
+              <%= submit_tag 'Search', class: "button" %>
+            </div>
+         <% end %>
+       </ul>
        </section>
      </nav>
   </div>

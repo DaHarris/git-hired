@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   match 'third/:id' => 'users#third_splash', as: 'third_splash', via: [:get]
   match 'projects/:id' => 'users#project_set', as: 'project_set', via: [:post]
 
+  match 'search' => 'searches#search', as: 'search', via: [:get, :post]
+
 
   # You can have the root of your site routed with "root"
   root 'users#welcome'

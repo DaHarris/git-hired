@@ -16,6 +16,14 @@
 
  */
 
+.searchtag {
+ display: inline-block;
+}
+
+.searchbox {
+ display: inline-block;
+}
+
 .row.show {
   background-color: #FFFFFF;
   opacity: 0.93;
