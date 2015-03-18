@@ -19,4 +19,8 @@ class GitFetcher
     @client.repositories(github_id)
   end
 
+  def avatar(github_id)
+    @client.user(github_id).avatar_url
+  end
+
 end
