@@ -18,6 +18,13 @@ class UsersController < ApplicationController
     @skills = Skill.where(user_id: @user.id)
   end
 
+  def destroy_repo
+    @user = User.find(params[:id])
+    @repo = Repo.find_by_id(params[:repo_id])
+    @repo.update(show: false)
+    redirect_to git_path(@user)
+  end
+
   def git
     @user = User.find_by_id(params[:id])
 
