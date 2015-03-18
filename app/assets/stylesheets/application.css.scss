@@ -95,7 +95,7 @@
 }
 
 .arrowleft {
-  position: absolute;
+  position: fixed;
   left: 10px;
   top: 50%;
 }
@@ -105,7 +105,7 @@
 }
 
 .arrowright {
-  position: absolute;
+  position: fixed;
   right: 10px;
   top: 50%;
 }
