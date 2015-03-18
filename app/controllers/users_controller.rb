@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    
+
     @user = User.find_by_id(params[:id])
 
     if @user.role == "employer" && @user.id = params[:id]
@@ -94,6 +94,10 @@ class UsersController < ApplicationController
                   url: "https://github.com/#{repo.full_name}")
     end
     @user.update(avatar: @avatar)
+    
+    if params[:user][:twitter_username]
+      @user.update(twitter_username: params[:user][:twitter_username])
+    end
 
     redirect_to third_splash_path(@user)
   end
