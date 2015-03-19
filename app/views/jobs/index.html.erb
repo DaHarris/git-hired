@@ -1,0 +1,28 @@
+<div class= "index_image"
+  <div class="container">
+    <div class="row">
+      <div class="index">
+        <table>
+          <thead>
+            <tr>
+              <th width="100"></th>
+              <th width="200">Location</th>
+              <th width="400">Description</th>
+              <th width="300">Posting URL</th>
+            </tr>
+          </thead>
+          <tbody>
+              <% @jobs.each do |job| %>
+                <tr>
+                  <td><%= image_tag(User.find(job.user_id).picture_url, width: "100") %></td>
+                  <td><%= job.location %></td>
+                  <td><%= job.description %></td>
+                  <td><%= link_to job.link %></td>
+                </tr>
+              <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
