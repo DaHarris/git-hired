@@ -1,0 +1,13 @@
+<div class="panel">
+  <div class="text-center">
+    <h5>Company Wish List</h5>
+    <hr>
+  </div>
+
+  <% @user.looking_fors.each do |lf| %>
+  <ul><p><%= best_in_place lf, :quality, :as => :input, :placeholder => 'What are you looking for in a company?', :url => user_path(@user, lf_id: lf.id) %></p>
+    <p><%= best_in_place lf, :language, :as => :input, :placeholder => 'What are your preferred languages?', :url => user_path(@user, lf_id: lf.id) %></p>
+    <p><%= best_in_place lf, :location, :as => :input, :placeholder => 'What are your preferred locations?', :url => user_path(@user, lf_id: lf.id) %></p>
+  </ul>
+  <% end %>
+</div>

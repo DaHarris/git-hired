@@ -1,14 +1,22 @@
 <div class="panel">
   <div class="text-center">
-    <h5>Company Wish List</h5>
+    <h5>Looking For:</h5>
     <hr>
   </div>
 
-  <%= form_for @user do |f| %>
-    <%= f.text_area :looking_for, :placeholder => 'What are you looking for in a company?' %>
-    <%= f.text_area :looking_for, :placeholder => 'Preferred languages...' %>
-    <%= f.text_area :looking_for, :placeholder => 'Preferred locations...' %>
+<%= form_for ([@user, @looking_for]), {url: "create"} do |lf| %>
 
-    <%= f.submit "hello" %>
-  <% end %>
+<%= lf.label :quality, 'Company Qualities' %>
+<%= lf.text_area :quality, placeholder: "What qualities are you looking for in a company?" %>
+
+<%= lf.label :language, 'Programming Languages' %>
+<%= lf.text_area :language, placeholder: "What are your preferred languages?" %>
+
+<%= lf.label :location, 'Preferred Locations' %>
+<%= lf.text_area :location, placeholder: "What cities do you want to work in?  ie: Denver, CO" %>
+
+<%= lf.submit %>
+
+<% end %>
+
 </div>
