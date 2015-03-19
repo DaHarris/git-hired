@@ -3,13 +3,25 @@
     <h4>Looking For:</h5>
     <hr>
     <h5>Qualitys</h5>
-    <ul><%= @lf.quality %></ul>
+    <ul>
+      <% if @lf.quality != nil %>
+        <%= @lf.quality %>
+      <% end %>
+    </ul>
     <br>
     <h5>Locations</h5>
-    <ul><%= @lf.location %></ul>
+    <ul>
+      <% if @lf.location != nil %>
+        <%= @lf.location %>
+      <% end %>
+    </ul>
     <br>
     <h5>Languages</h6>
-    <ul><%= @lf.language %></ul>
+      <ul>
+        <% if @lf.language != nil %>
+          <%= @lf.language %>
+        <% end %>
+      </ul>
     <br>
   </div>
 </div>
