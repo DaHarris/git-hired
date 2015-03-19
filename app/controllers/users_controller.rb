@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   respond_to :html, :json
-  
+
 
   def welcome
     render :layout => false
@@ -183,6 +183,29 @@ class UsersController < ApplicationController
       end
       redirect_to user_path(@user)
     end
+
+    def destroy
+      @user = User.find(params[:id])
+
+      if params[:emp_id].present?
+        @employment = Employment.find_by_id(params[:emp_id])
+        @employment.destroy
+        redirect_to user_path(@user)
+      end
+
+      if params[:edu_id].present?
+        @education = Education.find_by_id(params[:edu_id])
+        @education.destroy
+        redirect_to user_path(@user)
+      end
+
+      if params[:ski_id].present?
+        @skill = Skill.find_by_id(params[:ski_id])
+        @skill.destroy
+        redirect_to user_path(@user)
+      end
+    end
+
 
 
     private

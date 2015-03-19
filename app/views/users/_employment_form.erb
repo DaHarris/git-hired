@@ -4,18 +4,24 @@
 
   <% @user.employments.where(current: true).each do |emp| %>
   <ul>
-  <h4> <%= best_in_place_if correct_user, emp, :company, :as => :input, :url => user_path(@user, emp_id: emp.id), data: {emp: emp.id}%></h4>
-  <p><em><%= best_in_place_if correct_user, emp, :title, :as => :input, :url => user_path(@user, emp_id: emp.id)%></em></p>
-  <% end %>
-</ul>
-  <hr>
+    <h4><%= best_in_place_if correct_user, emp, :company, :as => :input, :url => user_path(@user, emp_id: emp.id), data: {emp: emp.id}%>
+      <% if correct_user%>
+      <%= link_to '<i class="fi-x"></i>'.html_safe, user_path(emp_id: emp.id), method: :delete %></h4>
+      <% end %>
+      <p><em><%= best_in_place_if correct_user, emp, :title, :as => :input, :url => user_path(@user, emp_id: emp.id)%></em></p>
+        <% end %>
+      </ul>
+      <hr>
 
 
 
-  <% @user.employments.where(current: false).each do |emp| %>
-  <ul>
-    <h4><%= best_in_place_if correct_user, emp, :company, :as => :input, :url => user_path(@user, emp_id: emp.id), data: {emp: emp.id}%></h4>
-    <p><em><%= best_in_place_if correct_user, emp, :title, :as => :input, :url => user_path(@user, emp_id: emp.id) %></em></p>
-  </ul>
-  <% end %>
-</div>
+      <% @user.employments.where(current: false).each do |emp| %>
+      <ul>
+        <h4><%= best_in_place_if correct_user, emp, :company, :as => :input, :url => user_path(@user, emp_id: emp.id), data: {emp: emp.id}%>
+        <% if correct_user%>
+        <%= link_to '<i class="fi-x"></i>'.html_safe, user_path(emp_id: emp.id), method: :delete %></h4>
+        <% end %>
+        <p><em><%= best_in_place_if correct_user, emp, :title, :as => :input, :url => user_path(@user, emp_id: emp.id) %></em></p>
+      </ul>
+      <% end %>
+    </div>
