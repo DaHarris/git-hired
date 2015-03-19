@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   post 'users/:id/git' => 'users#destroy_repo', as: 'git_delete'
   post 'users/:id/edu' => 'users#update_edu', as: 'update_edu'
 
+  post 'users/:id/looking' => 'looking_fors#create', as: 'create_lookings'
+  match 'users/:id/update/:lf_id' => 'looking_fors#update', as: 'update_lookings', via: [:patch]
+
 
   match 'first/:id' => 'users#first_splash', as: 'first_splash', via: [:get]
   match 'role/:id' => 'users#role_set', as: 'role_set', via: [:patch]
@@ -23,6 +26,6 @@ Rails.application.routes.draw do
   match '/auth/failure', to: redirect('/'), via: [:get, :post]
   match "/signout" => "sessions#destroy", as: 'signout', via: [:get, :post]
 
-  
+
 
 end

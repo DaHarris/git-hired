@@ -1,0 +1,15 @@
+<div class="text-center">
+  <h4>What are you looking for in a job?</h4>
+</div>
+  <%= form_tag create_lookings_path do %>
+    <%= label_tag 'Qualities:' %>
+    <%= text_area_tag :quality %>
+    <br>
+    <%= label_tag 'Locations' %>
+    <%= text_area_tag :location %>
+    <br>
+    <%= label_tag 'What languages do you know?' %>
+    <%= text_area_tag :language %>
+    <br>
+    <%= submit_tag "Save Changes", class: "button" %>
+  <% end %>

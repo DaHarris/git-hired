@@ -21,9 +21,17 @@
           <%= image_tag("/email.png", width: "50") %>
             <% end %>
         </div>
-          <hr>
+        <hr>
 
-        <%= render 'looking_for_form' %>
+        <% if @user.id == current_user.id %>
+          <% if @lf == nil %>
+            <%= render :partial => 'looking_fors/create_form' %>
+          <% else %>
+            <%= render :partial => 'looking_fors/edit_form', locals: {lang: @lf.language, qual: @lf.quality, loc: @lf.location, lf_id: @lf.id, user: @user} %>
+          <% end %>
+        <% else %>
+          <%= render 'looking_for_form' %>
+        <% end %>
 
 
       </div>

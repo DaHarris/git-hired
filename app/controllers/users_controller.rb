@@ -18,6 +18,8 @@ class UsersController < ApplicationController
       redirect_to users_path
     end
 
+    @lf = LookingFor.find_by(user_id: @user.id)
+
     @employment = Employment.where(user_id: @user.id)
     @education = Education.where(user_id: @user.id)
     @skills = Skill.where(user_id: @user.id)
