@@ -10,7 +10,36 @@
  display: inline-block;
 }
 
+.dividerbar {
+  color: #FFFFFF;
+}
 
+.button.small.post {
+  width: 100px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+  font-family: 'lobster', cursive;
+  color: #FFFFFF;
+}
+
+.top-bar-section ul li {
+  height: 45px;
+}
+
+.tableheader h4 {
+  font-family: 'lobster', cursive;
+}
+
+.nameheader h2 {
+  font-family: 'Lobster', cursive;
+}
 
 .searchbox {
  display: inline-block;
@@ -77,6 +106,28 @@
  margin-bottom: 50px;
 }
 
+.button.small.edit {
+  background-color: #ffc500;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100px;
+}
+
+table thead tr th {
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+.button.small.alert.destroy {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100px;
+}
+
 .panel.expgit {
   margin-top: 20px;
 }
@@ -120,10 +171,6 @@ h1,h2,h3,h4,h5,h6,a,p,div {
   font-family: 'Raleway', sans-serif;
 }
 
-.index {
-  padding-top: 60px;
-}
-
 .index_image {
   background-image: image-url("Galvanize_1.jpg");
   min-height: 1200px;
@@ -157,7 +204,11 @@ h1,h2,h3,h4,h5,h6,a,p,div {
   border-style: solid;
   border-width: 3px;
   border-color: #5d5fad;
+}
 
+.button.small {
+  float: right;
+  margin-top: 20px;
 }
 
 .row.jobs {

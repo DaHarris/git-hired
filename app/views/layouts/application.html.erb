@@ -10,7 +10,7 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Quicksand|Lobster|Raleway' rel='stylesheet' type='text/css'>
   </head>
 
   <div class="contain-to-grid sticky">
@@ -30,20 +30,20 @@
          <ul class="right">
            <% if current_user %>
               <% if current_user.role == "employer" %>
-                <li><%= link_to(current_user.name, users_path) %></li>
+                <li><h5>/<%= link_to(current_user.name, users_path) %></h5></li>
               <% else %>
-                <li><%= link_to(current_user.name, user_path(current_user)) %></li>
+                <li><h5>/<%= link_to(current_user.name, user_path(current_user)) %></h5></li>
               <% end %>
-              <li><%= link_to "Sign Out", signout_path %></li>
+              <li><h5>/<%= link_to "Sign Out", signout_path %></h5></li>
            <% else %>
-             <li><%= link_to "Sign In", "/auth/linkedin" %></li>
+             <li><h5>/<%= link_to "Sign In", "/auth/linkedin" %></h5></li>
            <% end %>
          </ul>
          <ul class="right">
            <div class="jobspath">
-            <li><%= link_to 'Jobs', jobs_path %></li>
+            <li><h5><%= link_to 'Jobs', jobs_path %></h5></li>
            </div>
-         </ul> 
+         </ul>
          <ul class="right">
            <%= form_tag search_path do %>
               <div class="searchtag">

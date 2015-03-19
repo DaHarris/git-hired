@@ -1,14 +1,18 @@
-<div class= "index_image"
+<div class= "index_image">
   <div class="container">
+    <div class="row">
+      <br>
+    </div>
     <div class="row">
       <div class="index">
         <table>
           <thead>
             <tr>
               <th width="100"></th>
-              <th width="200">Location</th>
-              <th width="400">Description</th>
-              <th width="300">Posting URL</th>
+              <th width="200"><div class="tableheader"><h4>Location:</h4></div></th>
+              <th width="400"><div class="tableheader"><h4>Description:</h4></div></th>
+              <th width="300"><div class="tableheader"><h4>Posting url:</h4></div></th>
+              <th width="100"><%= link_to 'Post Job', new_job_path, class: "button small post" %></th>
             </tr>
           </thead>
           <tbody>
@@ -18,6 +22,12 @@
                   <td><%= job.location %></td>
                   <td><%= job.description %></td>
                   <td><%= link_to job.link %></td>
+                  <% if current_user.id == job.user_id %>
+                    <td><%= link_to 'Edit', edit_job_path(job), class: 'button small edit' %>
+                    <%= link_to 'Delete', job, method: :delete, class: 'button small alert destroy'%></td>
+                  <% else %>
+                    <td></td>
+                  <% end %>
                 </tr>
               <% end %>
           </tbody>
