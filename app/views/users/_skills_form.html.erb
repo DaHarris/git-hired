@@ -1,5 +1,5 @@
 <div class="text-center">
-  <h3>Skills</h3>
+  <div class="skheader"><h3>Skills</h3></div>
   <hr>
   <% @skills.each do |ski| %>
     <%= best_in_place_if correct_user, ski, :name, :as => :input, :url => user_path(@user, ski_id: ski.id) %>

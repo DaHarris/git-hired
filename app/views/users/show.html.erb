@@ -6,7 +6,7 @@
           <%= image_tag(@user.avatar, width: "300") %>
         </div>
         <div class="text-center">
-          <h3><%= best_in_place @user, :name %></h3>
+          <div class="nameheader"><h2><%= best_in_place @user, :name %></h2></div>
         </div>
         <div class="text-center">
           <p><%= best_in_place @user, :description, :as => :textarea %></p>
