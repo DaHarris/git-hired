@@ -1,4 +1,3 @@
-
 <%= form_for @job do |f| %>
 
   <%= f.label :description %>
@@ -7,8 +6,8 @@
   <%= f.label :location %>
   <%= f.text_field :location %>
   <br>
-  <%= f.label :url %>
-  <%= f.text_field :url %>
+  <%= f.label :link %>
+  <%= f.text_field :link %>
   <br>
-  <%= f.submit %>
+  <%= f.submit class: "button" %>
 <% end %>
