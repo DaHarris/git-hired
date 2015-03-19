@@ -10,6 +10,8 @@
  display: inline-block;
 }
 
+
+
 .searchbox {
  display: inline-block;
 }
@@ -135,11 +137,37 @@ h1,h2,h3,h4,h5,h6,a,p,div {
   background-image: image-url("Galvanize_1.jpg")
 }
 
+.job-new {
+  background-image: image-url("Galvanize_1.jpg")
+}
+
+.job-edit {
+  background-image: image-url("Galvanize_1.jpg")
+}
+
+.job-show {
+  background-image: image-url("Galvanize_1.jpg")
+}
+
+.job-index {
+  background-image: image-url("Galvanize_1.jpg")
+}
+
 .panel.purple {
   border-style: solid;
   border-width: 3px;
   border-color: #5d5fad;
 
+}
+
+.row.jobs {
+  background-color: #FFFFFF;
+}
+
+.columns.jobs {
+  height: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .panel.purple h3 {
