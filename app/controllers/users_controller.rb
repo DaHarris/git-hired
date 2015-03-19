@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   respond_to :html, :json
+  
 
   def welcome
     render :layout => false

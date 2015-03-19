@@ -2,8 +2,8 @@
   <h3>Education</h3>
   <hr>
   <% @education.each do |edu| %>
-      <ul><strong><%= best_in_place edu, :school, :as => :input, :url => user_path(@user, edu_id: edu.id) %></strong>
-      <p><%= best_in_place edu, :field_of_study, :as => :input, :url => user_path(@user, edu_id: edu.id) %></p>
+      <ul><strong><%= best_in_place_if correct_user, edu, :school, :as => :input, :url => user_path(@user, edu_id: edu.id) %></strong>
+      <p><%= best_in_place_if correct_user, edu, :field_of_study, :as => :input, :url => user_path(@user, edu_id: edu.id) %></p>
     </ul>
   <% end %>
 </div>
