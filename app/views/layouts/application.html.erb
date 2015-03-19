@@ -40,15 +40,21 @@
            <% end %>
          </ul>
          <ul class="right">
-         <%= form_tag search_path do %>
-            <div class="searchtag">
-              <%= text_field_tag :username %>
-            </div>
-            <div class="searchbox">
-              <%= submit_tag 'Search', class: "button" %>
-            </div>
-         <% end %>
-       </ul>
+           <div class="jobspath">
+            <li><%= link_to 'Jobs', jobs_path %></li>
+           </div>
+         </ul> 
+         <ul class="right">
+           <%= form_tag search_path do %>
+              <div class="searchtag">
+                <%= text_field_tag :username %>
+              </div>
+              <div class="searchbox">
+                <%= submit_tag 'Search', class: "button" %>
+              </div>
+           <% end %>
+         </ul>
+
        </section>
      </nav>
   </div>
