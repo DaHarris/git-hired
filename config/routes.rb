@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :users
+  resources :jobs
 
   get 'users/:id/git' => 'users#git', as: 'git'
   post 'users/:id/git' => 'users#destroy_repo', as: 'git_delete'
