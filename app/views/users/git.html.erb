@@ -7,11 +7,21 @@
         </div>
         <div class="text-center">
           <div class="nameheader"><h2><strong><%= best_in_place @user, :name %></strong></h2></div>
-          <hr>
         </div>
         <div class="text-center">
           <p><%= best_in_place @user, :description, :as => :textarea %></p>
         </div>
+          <div class="text-center">
+            <%= link_to image_tag("/linked.png", width: "50"), @user.linkedin_url, target: "_blank" %>
+            <%= link_to image_tag("/octocat.png", width: "50"), "http://www.github.com/#{@user.github_id}" %>
+              <% if @user.twitter_username != nil %>
+            <%= link_to image_tag("/twitter.png", width: "50"), "http://www.twitter.com/#{@user.twitter_username}" %>
+              <% end %>
+              <%= mail_to @user.email do %>
+            <%= image_tag("/email.png", width: "50") %>
+              <% end %>
+          </div>
+          <hr>
 
           <%= render 'project_form' %>
 
