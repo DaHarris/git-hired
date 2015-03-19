@@ -1,12 +1,12 @@
-<div class="panel">
+<div class="panel purple">
   <div class="text-center">
     <h3>My Projects</h3>
     <hr>
   </div>
   <% if @projects != nil %>
     <% @projects.each do |project| %>
-      <ul><%= link_to project.url, project.url, target: "_blank" %>
-        <li><%= project.description %></li>
+      <ul>
+        <li><%= link_to project.description, project.url, target: "_blank" %></li>
       </ul>
     <% end %>
   <% end %>

@@ -2,7 +2,7 @@
   <div class="row">
     <br>
     <div class="text-right">
-      Step 2 of 4
+      Step 2 of 3
     </div>
     <h1>Let's get you employed, <%= @user.name %>!</h1>
     <hr>
@@ -11,8 +11,12 @@
 
       <%= f.label 'Please enter your github username:' %>
       <%= f.text_area :github_id %>
+      <br>
+      <%= f.label 'Twitter username:' %>
+      <%= f.text_area :twitter_username %>
+      <br>
 
-      <%= f.submit 'Find Github Profile', class: "button" %>
+      <%= f.submit 'Add Accounts', class: "button" %>
     <% end %>
   </div>
 </div>

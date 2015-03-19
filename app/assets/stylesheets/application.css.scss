@@ -1,0 +1,155 @@
+/*= require foundation */
+ /*= require_tree . */
+ /*= require_self */
+ /*= require foundation_and_overrides */
+
+@import 'foundation_and_overrides';
+@import 'foundation-icons';
+
+.searchtag {
+ display: inline-block;
+}
+
+.searchbox {
+ display: inline-block;
+}
+
+.row.show {
+  background-color: #FFFFFF;
+  opacity: 0.93;
+}
+
+.row.git {
+  background-color: #FFFFFF;
+  opacity: 0.93;
+}
+
+
+.welcome {
+ height: 100%;
+ width: 100%;
+ background-image: image-url("Galvanize_1.jpg")
+}
+
+.panel.callout {
+  position: absolute;
+  margin-top: 150px;
+  margin-left: 25%;
+  height: 70%;
+  width: 50%;
+  border-color: #b6edff;
+}
+
+.githired-logo {
+  height: 30px;
+
+}
+
+.panel.callout .text-center {
+  margin-top: 150px;
+}
+// .linkedin {
+//   position: absolute;
+//   margin-top: 11%;
+//   margin-left: 37%;
+//   height: 100px;
+//   width: 100px;
+// }
+//
+// .plus {
+//   position: absolute;
+//   height: 64px;
+//   width: 64px;
+//   margin-top: 12%;
+//   margin-left: 48%;
+// }
+//
+// .github {
+//   position: absolute;
+//   margin-top: 10%;
+//   margin-left: 55%;
+//   border-color: #000000;
+// }
+
+.navbar {
+ margin-bottom: 50px;
+}
+
+.panel.expgit {
+  margin-top: 20px;
+}
+
+.button a {
+  font-family: 'Raleway', sans-serif;
+  color: #F6EFEE;
+}
+
+.button.expand {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+}
+
+.profilepic {
+  margin-top: 20px;
+}
+
+.arrowleft {
+  position: fixed;
+  left: 10px;
+  top: 50%;
+}
+
+.arrowleft:hover {
+  opacity: 0.7;
+}
+
+.arrowright {
+  position: fixed;
+  right: 10px;
+  top: 50%;
+}
+
+.arrowright:hover {
+  opacity: 0.7;
+}
+
+h1,h2,h3,h4,h5,h6,a,p,div {
+  font-family: 'Raleway', sans-serif;
+}
+
+.index {
+  padding-top: 60px;
+}
+
+.index_image {
+  background-image: image-url("Galvanize_1.jpg");
+  min-height: 1200px;
+}
+
+.user_show_image {
+  background-image: image-url("Galvanize_1.jpg")
+}
+
+.user_git_image {
+  background-image: image-url("Galvanize_1.jpg")
+}
+
+.panel.purple {
+  border-style: solid;
+  border-width: 3px;
+  border-color: #5d5fad;
+
+}
+
+.panel.purple h3 {
+  color: #5d5fad;
+}
+
+.panel.purple ul {
+  list-style: none;
+}
+
+.panel.purple ul li a{
+  color: #5d5fad;
+}

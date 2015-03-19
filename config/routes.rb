@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :users
+  resources :jobs
 
   get 'users/:id/git' => 'users#git', as: 'git'
   post 'users/:id/git' => 'users#destroy_repo', as: 'git_delete'
@@ -13,10 +14,13 @@ Rails.application.routes.draw do
   match 'third/:id' => 'users#third_splash', as: 'third_splash', via: [:get]
   match 'projects/:id' => 'users#project_set', as: 'project_set', via: [:post]
 
+  match 'search' => 'searches#search', as: 'search', via: [:get, :post]
+
 
   # You can have the root of your site routed with "root"
   root 'users#welcome'
   match "/auth/linkedin/callback" => "sessions#create", via: [:get, :post]
+  match '/auth/failure', to: redirect('/'), via: [:get, :post]
   match "/signout" => "sessions#destroy", as: 'signout', via: [:get, :post]
 
   

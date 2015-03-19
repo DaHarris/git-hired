@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150318225118) do
+ActiveRecord::Schema.define(version: 20150319170859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 20150318225118) do
     t.string  "company"
     t.string  "title"
     t.boolean "current"
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "description"
+    t.string   "location"
+    t.string   "link"
+    t.integer  "user_id"
+    t.datetime "created_at"
   end
 
   create_table "looking_fors", force: :cascade do |t|
@@ -60,8 +68,8 @@ ActiveRecord::Schema.define(version: 20150318225118) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.string   "token"
     t.string   "location"
     t.string   "linkedin_url"
@@ -71,6 +79,7 @@ ActiveRecord::Schema.define(version: 20150318225118) do
     t.string   "github_id"
     t.integer  "role"
     t.string   "avatar"
+    t.string   "twitter_username"
   end
 
 end

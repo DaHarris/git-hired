@@ -152,6 +152,10 @@ class UsersController < ApplicationController
       end
       @user.update(avatar: @avatar)
 
+      if params[:user][:twitter_username]
+        @user.update(twitter_username: params[:user][:twitter_username])
+      end
+
       redirect_to third_splash_path(@user)
     end
 

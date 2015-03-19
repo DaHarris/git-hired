@@ -10,28 +10,17 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
 
-    <div class="linkedin">
-      <%= image_tag("/linkedin.png") %>
-    </div>
-
-    <div class="plus">
-      <%= image_tag("/plus.png") %>
-    </div>
-
-    <div class="github">
-      <%= image_tag("/Github.png") %>
-    </div>
-
     <div class="welcome">
       <div class="panel callout">
+        <div class="githired-logo"><%= image_tag("/githired-logo.png") %><%= image_tag("/codercat-for-web.png", width: "100") %></div>
         <div class="text-center">
-          <h1>Welcome to gitHired!</h1>
-          <h4>gitHired is a personalized resume designed for developers and coders!</h4>
+          <h1>Welcome Devs!</h1>
+          <h4>gitHired is a personalized resume designed for developers.</h4>
           <hr>
           <h6>We pull your education, skills, and employment history from LinkedIn and
             combine it (in one place) with your Github repositories for a resume that is

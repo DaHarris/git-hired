@@ -4,10 +4,16 @@
 </div>
 
 <% @user.repos.each do |repo| %>
-  <div class="button expand">
-    <%= link_to repo.name, repo.url  %>
-  </div>
-  <% if @user.id ==current_user%>
-  <%= link_to 'Delete Repo', git_delete_path(repo_id: repo.id), method: :post %>
+  <% if repo.show == true %>
+    <div class="button expand">
+      <%= link_to repo.name, repo.url  %>
+      <% if @user ==current_user%>
+
+      <%= link_to '<i class="fi-x"></i>'.html_safe, git_delete_path(repo_id: repo.id), method: :post%>
+
+      <% end %>
+    </div>
+  <% else %>
+    <% next %>
   <% end %>
 <% end %>

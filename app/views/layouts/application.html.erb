@@ -10,14 +10,14 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   </head>
 
   <div class="contain-to-grid sticky">
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1><%= link_to image_tag("/githired-logo.png", width: "127"), root_path %></h1>
+          <h1><%= link_to image_tag("/githired-logo.png", width: "127"), users_path %></h1>
         </li>
          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -25,6 +25,7 @@
 
 
       <section class="top-bar-section">
+
          <!-- Right Nav Section -->
          <ul class="right">
            <% if current_user %>
@@ -37,8 +38,17 @@
            <% else %>
              <li><%= link_to "Sign In", "/auth/linkedin" %></li>
            <% end %>
-
-        </ul>
+         </ul>
+         <ul class="right">
+         <%= form_tag search_path do %>
+            <div class="searchtag">
+              <%= text_field_tag :username %>
+            </div>
+            <div class="searchbox">
+              <%= submit_tag 'Search', class: "button" %>
+            </div>
+         <% end %>
+       </ul>
        </section>
      </nav>
   </div>
