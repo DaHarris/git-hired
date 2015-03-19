@@ -21,7 +21,7 @@
                   <td><%= link_to image_tag(User.find(job.user_id).picture_url, width: "100"), "#{User.find(job.user_id).linkedin_url}" %></td>
                   <td><%= job.location %></td>
                   <td><%= job.description %></td>
-                  <td><%= link_to job.link %></td>
+                  <td><%= link_to job.link, job.link %></td>
                   <% if current_user.id == job.user_id %>
                     <td><%= link_to 'Edit', edit_job_path(job), class: 'button small edit' %>
                     <%= link_to 'Delete', job, method: :delete, class: 'button small alert destroy'%></td>
