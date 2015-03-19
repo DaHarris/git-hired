@@ -18,7 +18,7 @@
           <tbody>
               <% @jobs.each do |job| %>
                 <tr>
-                  <td><%= image_tag(User.find(job.user_id).picture_url, width: "100") %></td>
+                  <td><%= link_to image_tag(User.find(job.user_id).picture_url, width: "100"), "#{User.find(job.user_id).linkedin_url}" %></td>
                   <td><%= job.location %></td>
                   <td><%= job.description %></td>
                   <td><%= link_to job.link %></td>
