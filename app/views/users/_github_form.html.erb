@@ -1,7 +1,8 @@
 <div class="text-center">
   <div class="github_button"><h1>Github Repos:</h1></div>
+  <% if @user == current_user %>
   <div class="github_button2"><div class="button small info"><%= link_to 'Pull New Repos', second_splash_path %></div></div>
-
+  <% end %>
   <hr>
 </div>
 
