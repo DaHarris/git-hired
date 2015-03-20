@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
   respond_to :html, :json
+  before_action :check_env
 
+  def check_env
+    if !Rails.env.development?
+      force_ssl
+    end
+  end
 
   def welcome
     render :layout => false
