@@ -1,7 +1,19 @@
 class JobsController < ApplicationController
 
   def index
-    @jobs = Job.all
+    search_type = params[:search_params]
+    search_text = params[:search_text]
+    if search_text == nil || search_text ==""
+      @jobs = Job.all
+    elsif search_type == "Jobs"
+      @jobs = Job.where("description ilike '%#{search_text}'")
+      @jobs_where = Job.where("location ilike '%#{search_text}'")
+      if @jobs_where != []
+        @jobs << @jobs_where
+      end
+      @jobs = @jobs.flatten
+      @jobs = @jobs.uniq
+    end
   end
 
   def show

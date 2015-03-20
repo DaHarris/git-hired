@@ -24,6 +24,9 @@ Jessica Koch
 Alexandra Hanley
 Hayley Blackstock
 
+Heroku:
+http://git-hired.herokuapp.com/
+
 Database:
 
   User Table:

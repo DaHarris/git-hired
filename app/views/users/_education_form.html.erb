@@ -1,10 +1,17 @@
 <div class="text-center">
-  <h3>Education</h3>
+
+  <% if current_user.id == @user.id %>
+    <div class="edplus">
+      <%= link_to '<i class="fi-plus style3"></i>'.html_safe, add_education_path(@user) %>
+    </div>
+  <% end %>
+
+  <div class="edheader"><h3>Education</h3></div>
   <hr>
   <% @education.each do |edu| %>
-      <ul><strong><%= best_in_place_if correct_user, edu, :school, :as => :input, :url => user_path(@user, edu_id: edu.id) %></strong>
+      <ul><h4><%= best_in_place_if correct_user, edu, :school, :as => :input, :url => user_path(@user, edu_id: edu.id) %>
         <% if correct_user%>
-          <%= link_to '<i class="fi-x"></i>'.html_safe, user_path(edu_id: edu.id), method: :delete %>
+          <%= link_to '<i class="fi-x"></i>'.html_safe, user_path(edu_id: edu.id), method: :delete %></h4>
         <% end %>
         <p><%= best_in_place_if correct_user, edu, :field_of_study, :as => :input, :url => user_path(@user, edu_id: edu.id) %></p>
       </ul>

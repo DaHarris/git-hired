@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   post 'users/:id/looking' => 'looking_fors#create', as: 'create_lookings'
   match 'users/:id/update/:lf_id' => 'looking_fors#update', as: 'update_lookings', via: [:patch]
 
+  get 'employments/:id/new' => 'employments#new', as: 'add_employment'
+  get 'educations/:id/new' => 'educations#new', as: 'add_education'
+  get 'skills/:id/new' => 'skills#new', as: 'add_skill'
 
   match 'first/:id' => 'users#first_splash', as: 'first_splash', via: [:get]
   match 'role/:id' => 'users#role_set', as: 'role_set', via: [:patch]
