@@ -10,6 +10,10 @@
  display: inline-block;
 }
 
+.panel.callout a:not(.button) {
+  font-family: 'lobster', cursive;
+}
+
 .github h1 {
   font-family: 'lobster', cursive;
 }
@@ -122,7 +126,7 @@ select {
   position: absolute;
   margin-top: 150px;
   margin-left: 25%;
-  height: 70%;
+  height: 60%;
   width: 50%;
   border-color: #b6edff;
 }
