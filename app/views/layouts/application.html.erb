@@ -46,8 +46,11 @@
          </ul>
          <ul class="right">
            <%= form_tag search_path do %>
+              <div class="searchdropdown">
+                <%= select_tag :Search_Parameters, options_for_select([ "Jobs", "Users", "Skills" ], params[:search]) %>
+              </div>
               <div class="searchtag">
-                <%= text_field_tag :username, nil, placeholder: 'Search Users' %>
+                <%= text_field_tag :search_text %>
               </div>
               <div class="searchbox">
                 <%= submit_tag 'Search', class: "button" %>

@@ -7,7 +7,19 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    search_type = params[:search_params]
+    search_text = params[:search_text]
+    if search_text == nil || search_text == ""
+      @users = User.all
+    elsif search_type == "Skills"
+      @skills = Skill.where("name ilike '%#{search_text}%'")
+      @users = []
+      if @skills != nil
+        @skills.each do |x|
+          @users << x.user
+        end
+      end
+    end
   end
 
   def show

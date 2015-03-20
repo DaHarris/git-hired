@@ -1,4 +1,11 @@
 <div class="text-center">
+
+  <% if current_user.id == @user.id %>
+    <div class="edplus">
+      <%= link_to '<i class="fi-plus style3"></i>'.html_safe, add_education_path(@user) %>
+    </div>
+  <% end %>
+
   <div class="edheader"><h3>Education</h3></div>
   <hr>
   <% @education.each do |edu| %>

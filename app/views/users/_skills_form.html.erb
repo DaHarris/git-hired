@@ -1,4 +1,11 @@
 <div class="text-center">
+
+  <% if current_user.id == @user.id %>
+    <div class="skiplus">
+      <%= link_to '<i class="fi-plus style3"></i>'.html_safe, add_skill_path(@user) %>
+    </div>
+  <% end %>
+
   <div class="skheader"><h3>Skills</h3></div>
   <hr>
   <% @skills.each do |ski| %>

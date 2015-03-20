@@ -10,8 +10,48 @@
  display: inline-block;
 }
 
+select {
+  position: relative;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 28px;
+}
+
+.searchdropdown {
+  top: 8.5px;
+  position: relative;
+  height: 28px;
+  width: 75px;
+  margin-bottom: 0px;
+  display: inline-block;
+}
+
+.style3 {
+  font-size: 30px;
+  color: #008CBA;
+  text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #008CBA,0 0 30px #008CBA,0 0 40px #008CBA,0 0 50px #008CBA,0 0 75px #008CBA;
+}
+
 .dividerbar {
   color: #FFFFFF;
+}
+
+.github_button2 {
+  float: right;
+}
+
+.empplus {
+  float: right;
+}
+
+.edplus {
+  float: right;
+}
+
+.skiplus {
+  float: right;
 }
 
 .button.small.post {
