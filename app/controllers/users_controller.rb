@@ -132,8 +132,6 @@ class UsersController < ApplicationController
       end
 
 
-
-
     def first_splash
       @user = User.find_by_id(params[:id])
     end
@@ -223,7 +221,7 @@ class UsersController < ApplicationController
 
 
     private
-
+    
     def employment_params
       params.require(:employment).permit(:company, :title)
     end
