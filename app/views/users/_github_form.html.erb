@@ -13,7 +13,7 @@
 <% @user.repos.each do |repo| %>
   <% if repo.show == true %>
     <div class="button expand">
-      <%= link_to repo.name, repo.url  %>
+      <%= link_to repo.name, repo.url, target: "_blank"   %>
       <% if @user ==current_user || current_user.role == "admin"%>
 
       <%= link_to '<i class="fi-x"></i>'.html_safe, git_delete_path(repo_id: repo.id), method: :post%>
