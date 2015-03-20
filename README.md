@@ -25,7 +25,7 @@ Alexandra Hanley
 Hayley Blackstock
 
 Heroku:
-http://git-hired.herokuapp.com/
+https://git-hired.herokuapp.com/
 
 Database:
 
