@@ -2,6 +2,9 @@
   <div class="container">
     <div class="row show">
       <div class="medium-4 columns">
+        <% if current_user.id == @user.id || current_user.role == "admin" %>
+          <%= link_to 'Delete User', user_path(@user, :type => "user"), method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
         <div class="profilepic">
           <%= image_tag(@user.avatar, width: "300") %>
         </div>

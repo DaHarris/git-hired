@@ -221,6 +221,16 @@ class UsersController < ApplicationController
     def destroy
       @user = User.find(params[:id])
 
+      if params[:type] == "user"
+        if @user.id == current_user.id
+          session[:user_id] = nil
+          @user.destroy
+          redirect_to root_path
+        else
+          @user.destroy
+          redirect_to users_path
+        end
+      end
       if params[:emp_id].present?
         @employment = Employment.find_by_id(params[:emp_id])
         @employment.destroy
