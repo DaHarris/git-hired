@@ -6,15 +6,15 @@
           <%= image_tag(@user.avatar, width: "300") %>
         </div>
         <div class="text-center">
-          <div class="nameheader"><h2><strong><%= best_in_place @user, :name %></strong></h2></div>
+          <div class="nameheader"><h2><strong><%= @user.name %></strong></h2></div>
         </div>
         <div class="text-center">
-          <p><%= best_in_place @user, :description, :as => :textarea %></p>
+          <p><%= @user.description %></p>
         </div>
           <div class="text-center">
             <%= link_to image_tag("/linked.png", width: "50"), @user.linkedin_url, target: "_blank" %>
             <%= link_to image_tag("/octocat.png", width: "50"), "http://www.github.com/#{@user.github_id}" %>
-              <% if @user.twitter_username != nil %>
+              <% if @user.twitter_username != nil || @user.twitter_username != "" %>
             <%= link_to image_tag("/twitter.png", width: "50"), "http://www.twitter.com/#{@user.twitter_username}" %>
               <% end %>
               <%= mail_to @user.email do %>
