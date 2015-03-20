@@ -179,9 +179,12 @@ class UsersController < ApplicationController
       @avatar = @gitfetcher.avatar(@user.github_id)
 
       @get_repos.each do |repo|
-        Repo.create(user_id: @user.id, name: repo.name,
-        url: "https://github.com/#{repo.full_name}")
+        if !Repo.find_by_name(repo.name)
+          Repo.create(user_id: @user.id, name: repo.name,
+          url: "https://github.com/#{repo.full_name}")
+        end
       end
+
       @user.update(avatar: @avatar)
 
       if params[:user][:twitter_username]
