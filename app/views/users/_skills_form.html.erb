@@ -1,6 +1,6 @@
 <div class="text-center">
 
-  <% if current_user.id == @user.id %>
+  <% if current_user.id == @user.id || current_user.role == "admin" %>
     <div class="skiplus">
       <%= link_to '<i class="fi-plus style3"></i>'.html_safe, add_skill_path(@user) %>
     </div>
@@ -9,8 +9,8 @@
   <div class="skheader"><h3>Skills</h3></div>
   <hr>
   <% @skills.each do |ski| %>
-    <%= best_in_place_if correct_user, ski, :name, :as => :input, :url => user_path(@user, ski_id: ski.id) %>
-    <% if correct_user%>
+    <%= best_in_place_if correct_user || current_user.role == "admin", ski, :name, :as => :input, :url => user_path(@user, ski_id: ski.id) %>
+    <% if correct_user || current_user.role == "admin"%>
       <%= link_to '<i class="fi-x"></i>'.html_safe, user_path(ski_id: ski.id), method: :delete %>
     <% end %>
   <% end %>

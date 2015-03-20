@@ -1,6 +1,6 @@
 <div class="text-center">
 
-  <% if @user == current_user %>
+  <% if @user == current_user || current_user.role == "admin"%>
     <div class="github_button2">
       <%= link_to '<i class="fi-plus style3"></i>'.html_safe, second_splash_path %>
     </div>
@@ -14,7 +14,7 @@
   <% if repo.show == true %>
     <div class="button expand">
       <%= link_to repo.name, repo.url  %>
-      <% if @user ==current_user%>
+      <% if @user ==current_user || current_user.role == "admin"%>
 
       <%= link_to '<i class="fi-x"></i>'.html_safe, git_delete_path(repo_id: repo.id), method: :post%>
 

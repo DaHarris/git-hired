@@ -5,7 +5,7 @@
         <div class="profilepic">
           <%= image_tag(@user.avatar, width: "300") %>
         </div>
-        <% if current_user.id == @user.id %>
+        <% if current_user.id == @user.id || current_user.role == "admin"%>
           <div class="nameedit">
             <a href="#" data-reveal-id="myModal"><div class="text-center">Edit Name and/or Description</div></a>
           </div>
@@ -28,7 +28,7 @@
         </div>
         <hr>
 
-        <% if @user.id == current_user.id %>
+        <% if @user.id == current_user.id || current_user.role == "admin" %>
           <% if @lf == nil %>
             <%= render :partial => 'looking_fors/create_form' %>
           <% else %>

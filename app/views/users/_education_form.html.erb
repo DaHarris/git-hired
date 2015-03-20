@@ -1,6 +1,6 @@
 <div class="text-center">
 
-  <% if current_user.id == @user.id %>
+  <% if current_user.id == @user.id || current_user.role == "admin" %>
     <div class="edplus">
       <%= link_to '<i class="fi-plus style3"></i>'.html_safe, add_education_path(@user) %>
     </div>
@@ -9,11 +9,11 @@
   <div class="edheader"><h3>Education</h3></div>
   <hr>
   <% @education.each do |edu| %>
-      <ul><h4><%= best_in_place_if correct_user, edu, :school, :as => :input, :url => user_path(@user, edu_id: edu.id) %>
-        <% if correct_user%>
+      <ul><h4><%= best_in_place_if correct_user || current_user.role == "admin", edu, :school, :as => :input, :url => user_path(@user, edu_id: edu.id) %>
+        <% if correct_user || current_user.role == "admin" %>
           <%= link_to '<i class="fi-x"></i>'.html_safe, user_path(edu_id: edu.id), method: :delete %></h4>
         <% end %>
-        <p><%= best_in_place_if correct_user, edu, :field_of_study, :as => :input, :url => user_path(@user, edu_id: edu.id) %></p>
+        <p><%= best_in_place_if correct_user || current_user.role == "admin", edu, :field_of_study, :as => :input, :url => user_path(@user, edu_id: edu.id) %></p>
       </ul>
   <% end %>
 </div>

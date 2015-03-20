@@ -22,7 +22,7 @@
                   <td><%= job.location %></td>
                   <td><%= job.description %></td>
                   <td><%= link_to job.link, job.link %></td>
-                  <% if current_user.id == job.user_id %>
+                  <% if current_user.id == job.user_id || current_user.role == "admin" %>
                     <td><%= link_to 'Edit', edit_job_path(job), class: 'button small edit' %>
                     <%= link_to 'Delete', job, method: :delete, class: 'button small alert destroy'%></td>
                   <% else %>

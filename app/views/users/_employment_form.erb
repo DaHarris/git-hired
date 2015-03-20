@@ -1,5 +1,5 @@
 <div class="text-center">
-  <% if current_user.id == @user.id %>
+  <% if current_user.id == @user.id || current_user.role == "admin" %>
     <div class="empplus">
       <%= link_to '<i class="fi-plus style3"></i>'.html_safe, add_employment_path(@user) %>
     </div>
@@ -10,11 +10,11 @@
 
   <% @user.employments.where(current: true).each do |emp| %>
   <ul>
-    <h4><%= best_in_place_if correct_user, emp, :company, :as => :input, :url => user_path(@user, emp_id: emp.id), data: {emp: emp.id}%>
-      <% if correct_user%>
+    <h4><%= best_in_place_if correct_user || current_user.role == "admin", emp, :company, :as => :input, :url => user_path(@user, emp_id: emp.id), data: {emp: emp.id}%>
+      <% if correct_user || current_user.role == "admin"%>
       <%= link_to '<i class="fi-x"></i>'.html_safe, user_path(emp_id: emp.id), method: :delete %></h4>
       <% end %>
-      <p><em><%= best_in_place_if correct_user, emp, :title, :as => :input, :url => user_path(@user, emp_id: emp.id)%></em></p>
+      <p><em><%= best_in_place_if correct_user || current_user.role == "admin", emp, :title, :as => :input, :url => user_path(@user, emp_id: emp.id)%></em></p>
         <% end %>
       </ul>
       <hr>
@@ -23,11 +23,11 @@
 
       <% @user.employments.where(current: false).each do |emp| %>
       <ul>
-        <h4><%= best_in_place_if correct_user, emp, :company, :as => :input, :url => user_path(@user, emp_id: emp.id), data: {emp: emp.id}%>
-        <% if correct_user%>
+        <h4><%= best_in_place_if correct_user || current_user.role == "admin", emp, :company, :as => :input, :url => user_path(@user, emp_id: emp.id), data: {emp: emp.id}%>
+        <% if correct_user || current_user.role == "admin"%>
         <%= link_to '<i class="fi-x"></i>'.html_safe, user_path(emp_id: emp.id), method: :delete %></h4>
         <% end %>
-        <p><em><%= best_in_place_if correct_user, emp, :title, :as => :input, :url => user_path(@user, emp_id: emp.id) %></em></p>
+        <p><em><%= best_in_place_if correct_user || current_user.role == "admin", emp, :title, :as => :input, :url => user_path(@user, emp_id: emp.id) %></em></p>
       </ul>
       <% end %>
     </div>
