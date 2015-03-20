@@ -5,6 +5,11 @@
         <div class="profilepic">
           <%= image_tag(@user.avatar, width: "300") %>
         </div>
+        <% if current_user.id == @user.id %>
+          <div class="nameedit">
+            <a href="#" data-reveal-id="myModal"><div class="text-center">Edit Name and/or Description</div></a>
+          </div>
+        <% end %>
         <div class="text-center">
           <div class="nameheader"><h2><%= best_in_place @user, :name %></h2></div>
         </div>
@@ -14,7 +19,7 @@
         <div class="text-center">
           <%= link_to image_tag("/linked.png", width: "50"), @user.linkedin_url, target: "_blank" %>
           <%= link_to image_tag("/octocat.png", width: "50"), "http://www.github.com/#{@user.github_id}" %>
-            <% if @user.twitter_username != nil %>
+            <% if @user.twitter_username != nil && @user.twitter_username != "" %>
           <%= link_to image_tag("/twitter.png", width: "50"), "http://www.twitter.com/#{@user.twitter_username}" %>
             <% end %>
             <%= mail_to @user.email do %>
@@ -54,4 +59,18 @@
   <div class="arrowright">
     <%= link_to image_tag("/oktocat-and-arrow.png"), git_path %>
   </div>
+</div>
+
+<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modalTitle">Edit Name and/or Description</h2>
+  <%= form_tag edit_description_path do %>
+    <%= label_tag :name %>
+    <%= text_field_tag :name %>
+    <br>
+    <%= label_tag :description %>
+    <%= text_field_tag :description %>
+    <br>
+    <%= submit_tag "Save Changes", class: "button" %>
+  <% end %>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>

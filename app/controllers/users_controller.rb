@@ -8,6 +8,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit_description
+    @user = User.find(params[:id])
+    if params[:name] != nil && params[:name] != ""
+      @user.update(name: params[:name])
+    end
+    if params[:description] != nil && params[:description] != ""
+      @user.update(description: params[:description])
+    end
+    redirect_to user_path(@user)
+  end
+
   def welcome
     render :layout => false
   end
