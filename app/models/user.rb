@@ -1,13 +1,14 @@
 class User < ActiveRecord::Base
-  has_many :projects
-  has_many :repos
-  has_many :employments
-  has_many :looking_fors
+  has_many :projects, dependent: :destroy
+  has_many :repos, dependent: :destroy
+  has_many :employments, dependent: :destroy
+  has_many :looking_fors, dependent: :destroy
+  has_many :skills, dependent: :destroy
+  has_many :educations, dependent: :destroy
 
   enum role: [:employee, :employer, :admin]
-  has_many :skills
-  has_many :employments
-  has_many :educations
+  has_many :skills, dependent: :destroy
+  has_many :educations, dependent: :destroy
 
   def self.create_with_omniauth(auth, code)
     @current = create! do |user|
