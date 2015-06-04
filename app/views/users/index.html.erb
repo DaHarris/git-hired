@@ -16,7 +16,7 @@
           </thead>
           <tbody>
             <% @users.each do |user| %>
-              <% if user.role == "employee" %>
+              <% if user.role == "employee" || user.role == "admin" %>
                 <tr>
                   <td><%= link_to image_tag(user.avatar, width: "100"), user_path(user) %><div class="text-center"><%= user.name %></div></td>
                     <% if user.employments == [] %>

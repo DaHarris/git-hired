@@ -2,6 +2,9 @@
   <div class="container">
     <div class="row show">
       <div class="medium-4 columns">
+        <% if current_user.id == @user.id || current_user.role == "admin" %>
+          <%= link_to 'Delete User', user_path(@user, :type => "user"), method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
         <div class="profilepic">
           <%= image_tag(@user.avatar, width: "300") %>
         </div>
@@ -11,10 +14,10 @@
           </div>
         <% end %>
         <div class="text-center">
-          <div class="nameheader"><h2><%= best_in_place @user, :name %></h2></div>
+          <div class="nameheader"><h2><%= @user.name %></h2></div>
         </div>
         <div class="text-center">
-          <p><%= best_in_place @user, :description, :as => :textarea %></p>
+          <p><%= @user.description %></p>
         </div>
         <div class="text-center">
           <%= link_to image_tag("/linked.png", width: "50"), @user.linkedin_url, target: "_blank" %>

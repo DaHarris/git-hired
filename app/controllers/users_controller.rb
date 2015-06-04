@@ -177,9 +177,12 @@ class UsersController < ApplicationController
       @avatar = @gitfetcher.avatar(@user.github_id)
 
       @get_repos.each do |repo|
-        Repo.create(user_id: @user.id, name: repo.name,
-        url: "https://github.com/#{repo.full_name}")
+        if !Repo.find_by_name(repo.name)
+          Repo.create(user_id: @user.id, name: repo.name,
+          url: "https://github.com/#{repo.full_name}")
+        end
       end
+
       @user.update(avatar: @avatar)
 
       if params[:user][:twitter_username]
@@ -216,6 +219,16 @@ class UsersController < ApplicationController
     def destroy
       @user = User.find(params[:id])
 
+      if params[:type] == "user"
+        if @user.id == current_user.id
+          session[:user_id] = nil
+          @user.destroy
+          redirect_to root_path
+        else
+          @user.destroy
+          redirect_to users_path
+        end
+      end
       if params[:emp_id].present?
         @employment = Employment.find_by_id(params[:emp_id])
         @employment.destroy

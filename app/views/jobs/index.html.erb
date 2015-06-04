@@ -8,10 +8,11 @@
         <table>
           <thead>
             <tr>
-              <th width="100"></th>
-              <th width="200"><div class="tableheader"><h4>Location:</h4></div></th>
-              <th width="400"><div class="tableheader"><h4>Description:</h4></div></th>
-              <th width="300"><div class="tableheader"><h4>Posting url:</h4></div></th>
+              <th width="125"></th>
+              <th width="175"><div class="tableheader"><h4>Location:</h4></div></th>
+              <th width="350"><div class="tableheader"><h4>Description:</h4></div></th>
+              <th width="250"><div class="tableheader"><h4>Posting url:</h4></div></th>
+              <th width="100"><div class="tableheader"><h4>Email:</h4></div></th>
               <th width="100"><%= link_to 'Post Job', new_job_path, class: "button small post" %></th>
             </tr>
           </thead>
@@ -21,7 +22,8 @@
                   <td><%= link_to image_tag(User.find(job.user_id).picture_url, width: "100"), "#{User.find(job.user_id).linkedin_url}" %></td>
                   <td><%= job.location %></td>
                   <td><%= job.description %></td>
-                  <td><%= link_to job.link, job.link %></td>
+                  <td><%= link_to job.link, "http://#{job.link}", target: "_blank" %></td>
+                  <td><%= mail_to User.find(job.user_id).email %></td>
                   <% if current_user.id == job.user_id || current_user.role == "admin" %>
                     <td><%= link_to 'Edit', edit_job_path(job), class: 'button small edit' %>
                     <%= link_to 'Delete', job, method: :delete, class: 'button small alert destroy'%></td>

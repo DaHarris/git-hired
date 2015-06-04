@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :looking_fors, dependent: :destroy
   has_many :skills, dependent: :destroy
   has_many :educations, dependent: :destroy
+  has_many :jobs, dependent: :destroy
 
   enum role: [:employee, :employer, :admin]
   has_many :skills, dependent: :destroy
